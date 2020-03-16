@@ -1,0 +1,38 @@
+# compiled output
+/dist*
+/src/coverage*
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules*
+
+# misc folders
+/cypress/scree*
+/cypress/vide*
+/connect.lock
+/coverage
+/typings
+/.sass-cache
+/.scanner*
+
+# ides and editors
+.project
+.classpath
+.vscode
+.idea
+.c9
+.settings
+*.launch
+*.sublime-workspace
+*.code-workspace
+
+# misc files
+sonar-project.properties
+
+# logs
+*.log
+
+# system
+.DS_Store
+Thumbs.db
