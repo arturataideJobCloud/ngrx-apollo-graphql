@@ -1,2 +1,7 @@
-export { players } from './players.db';
-export { team } from './team.db'
+import { players } from './players.db';
+import { team } from './team.db';
+
+export const db = {
+  team,
+  players,
+};

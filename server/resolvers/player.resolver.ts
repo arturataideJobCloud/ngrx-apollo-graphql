@@ -1,19 +1,11 @@
 import { IResolverObject, UserInputError } from 'apollo-server';
-import { Player, Position } from '../models';
-import { team } from '../database';
+import { Player } from '../models';
+import { db } from '../database';
 
-let players: Array<Player> = [
-  {
-    id: '1',
-    name: 'Artur Ataide',
-    number: 10,
-    position: Position.ADVANCED_MIDFIELDER,
-  },
-];
 
 export const playerQueryResolvers: IResolverObject = {
-  players: () => players,
-  playersById: (id: string) => players[id],
+  players: () => db.players,
+  playersById: (id: string) => db.players[id],
 };
 
 export const playerMutationResolvers: IResolverObject = {
@@ -21,7 +13,7 @@ export const playerMutationResolvers: IResolverObject = {
 };
 
 function addPlayer({ payload }) {
-  const isNumberTaken = players.find(
+  const isNumberTaken = db.players.find(
     (_player) => _player.number === payload.number,
   );
 
@@ -36,7 +28,7 @@ function addPlayer({ payload }) {
     position: payload.position,
   });
 
-  players = [...players, player];
-  team.players = players;
+  db.players = [...db.players, player];
+  db.team.players = db.players;
   return player;
 }

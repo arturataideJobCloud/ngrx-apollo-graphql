@@ -1,6 +1,6 @@
-import { team } from '../database';
 import { IResolverObject } from 'apollo-server';
+import { db } from '../database';
 
 export const teamQueryResolvers: IResolverObject = {
-  team: () => team,
+  team: () => db.team,
 };

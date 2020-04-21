@@ -1,5 +1,5 @@
 import { Team } from '../models';
-import { players } from './index';
+import { players } from './players.db';
 
 export const team: Team = {
   id: '1',
