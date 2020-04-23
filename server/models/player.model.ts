@@ -20,7 +20,7 @@ export class Player {
   position: Position;
 
   constructor(object: Partial<Player>) {
-      // ID is set to 1. Just for demo purposes
-    Object.assign(this, {id: '1',...object});
+    // ID is set to new Date String. Just for demo purposes
+    Object.assign(this, { id: Date.now().toString(), ...object });
   }
 }

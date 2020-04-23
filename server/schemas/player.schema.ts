@@ -37,5 +37,6 @@ export const playerTypeDef: DocumentNode = gql`
 
   extend type Mutation {
     addPlayer(payload: PlayerInput): Player
+    deletePlayer(playerId: String!): Boolean
   }
 `;
